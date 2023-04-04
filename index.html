@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Riokasmal Home</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+              <img src="img/logo.png" alt="Logo">
+            </a>
+          </div>        
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">
+          <div class="Home"></div>
+          <div class="Blog"></div>
+          <div class="Portofolio"></div>
+          <div class="About"></div>
+          <div class="Contact"></div>
+        </div>
+      </nav>
+
+    <!-- konten -->
+    <div class="container">
+        <div class="left">
+          <h1><span class="light">Hi, I'm</span> <span class="bold">RioKasmal</span></h1>
+          <h2 class="title">I'm Design Graphic &amp; Web Developer</h2>
+          
+          <div class="description">
+            <p class="desc-text">Saya adalah seorang mahasiswa Universitas Pamulang, berjurusan Teknik Informatika, dan saat ini duduk di semester tingkat akhir.</p>
+            <a href="about.html">
+                <button class="view-more">View More</button>
+            </a>
+            <p style="color: red; font-size: 14px; font-weight: lighter; width: 300px;">*sementara waktu pada mobile gunakan tampilan Situs Desktop. (klik titik 3 pojok atas - Situs desktop/Desktop site)</p>
+          </div>
+          
+        </div>
+        <div class="right">
+          <div class="profile-image"></div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2023 Riokasmal. Created by Riokasmal with the assistance of ChatGPT.</p>
+    </footer>
+</body>
+
+<!--javascript -->
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        const burger = document.querySelector(".burger");
+        const links = document.querySelectorAll(".nav-links li");
+
+        navLinks.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+
+        links.forEach((link, index) => {
+            if (link.style.animation) {
+            link.style.animation = "";
+            } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+            });
+        }
+    </script>
+
+</html>
