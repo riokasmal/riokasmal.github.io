@@ -1,207 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>About - Riokasmal</title>
-	<style type="text/css">
-    /* navbar */
-    .navbar {
-      font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: #403814;
-    color: #fff;
-  }
-  
-  .logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .logo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-  }
-  
-  .nav-links li {
-    list-style: none;
-  }
-  
-  .nav-links li a {
-    color: #F2E416;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    background-color: #F2E416;
-    color: #0D0D0D;
-  }
-  
-  .burger {
-    display: none;
-    cursor: pointer;
-  }
-  
-  .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .nav-links {
-      position: fixed;
-      right: 0;
-      top: 0;
-      height: 100vh;
-      background-color: #0D0D0D;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: end;
-      width: 80%;
-      transform: translateX(100%);
-      transition: all 0.5s ease;
-    }
-    
-    .nav-links li {
-      opacity: 0;
-    }
-    
-    .burger {
-      display: block;
-    }
-  }
-  
-  .nav-active {
-    transform: translateX(0%);
-  }
-  
-  @keyframes navLinkFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-
-  /* konten */
-		body {
-			background-color: #0a0a0a;
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-		.container {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 86.3vh;
-			background-color: #0a0a0a;
-			border-radius: 5px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-		}
-    h2 {
-      font-family: Arial, Helvetica, sans-serif;
-			font-size: 20px;
-      font-weight: bold;
-			color: #F2E416;
-			margin: 0;
-      line-height: 50px;
-		}
-		h1 {
-      font-family: Arial, Helvetica, sans-serif;
-			font-size: 18px;
-      font-weight: 1;
-			color: #F2E416;
-			margin: 0;
-		}
-		.btn {
-      font-family: Arial, Helvetica, sans-serif;
-			margin-top: 20px;
-			padding: 10px 20px;
-			background-color: #403814;
-			color: #F2E416;
-      font-weight: bold;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 16px;
-			transition: background-color 0.3s ease;
-		}
-		.btn:hover {
-      font-weight: bold;
-			background-color: #F2E416;
-			color: #0a0a0a;
-		}
-
-    /* footer */
-    footer {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #403814;
-    color: #F2E416;
-    font-size: 12px;
-    text-align: center;
-    padding: 5px;
-  }
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Riokasmal</title>
+  <link rel="stylesheet" href="about-style.css">
 </head>
-<!-- navbar -->
-<nav class="navbar">
-  <div class="logo">
-      <a href="index.html">
-        <img src="img/logo.png" alt="Logo">
-      </a>
-    </div>        
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="portofolio.html">Portofolio</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="burger" onclick="toggleMenu()">
-    <div class="Home"></div>
-    <div class="Blog"></div>
-    <div class="Portofolio"></div>
-    <div class="About"></div>
-    <div class="Contact"></div>
-  </div>
-</nav>
-
 <body>
-	<div class="container">
-    <h2>Halaman belum tersedia!</h2>
-		<h1>Nantikan perkembangan selanjutnya. Stay tune :)</h1>
-    <a href="index.html">
-      <button class="btn">Back to Home</button>
-    </a>
-		
-	</div>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+     <div class="logo">
+         <a href="index.html">
+           <img src="img/logo.png" alt="Logo">
+         </a>
+       </div>        
+     <ul class="nav-links">
+       <li><a href="index.html">HOME</a></li>
+       <li><a href="blog.html">BLOG</a></li>
+       <li><a href="portofolio.html">PORTOFOLIO</a></li>
+       <li><a href="#">ABOUT</a></li>
+       <li><a href="contact.html">CONTACT</a></li>
+     </ul>
+     <div class="burger" onclick="toggleMenu()">
+       <div class="Home"></div>
+       <div class="Blog"></div>
+       <div class="Portofolio"></div>
+       <div class="About"></div>
+       <div class="Contact"></div>
+     </div>
+   </nav>
+   </header>
 
-<!-- footer -->
+   <!-- konten -->
+  <div class="container">
+    <div class="profile">
+      <img src="img/profile.jpg" alt="Foto Profil">
+    </div>
+    <div class="desc">
+      <h1>Riokasmal</h1>
+      <p>Riokasmal merupakan nama panggilan saya, singkatan dari nama lengkap Mohammad Rio Rizal Cashmal. Saya mengganti nama tersebut agar lebih mudah diingat oleh orang lain. Saat ini, saya berusia 22 tahun dan sedang menempuh kuliah di Universitas Pamulang, jurusan Teknik Informatika dan sedang menempuh semester akhir atau semester 8.</p>
+      <p>Keahlian saya yang sering menonjol adalah desain grafis dan sedikit ilmu program. Saya sangat senang berada di depan komputer dan bermain futsal, namun sayangnya saya mengalami cedera sehingga tidak dapat bermain futsal lagi. Hobi saya saat ini adalah mendengarkan musik dan bereksperimen.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2023 Riokasmal. Created by Riokasmal with the assistance of ChatGPT.</p>
-</footer>
+    <p>&copy; 2023 Riokasmal. Created by Riokasmal with the assistance of ChatGPT.</p>
+  </footer>
 
+  <!-- javascript -->
+  <script>
+    function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        const burger = document.querySelector(".burger");
+        const links = document.querySelectorAll(".nav-links li");
+
+        navLinks.classList.toggle("nav-active");
+        burger.classList.toggle("toggle");
+
+        links.forEach((link, index) => {
+            if (link.style.animation) {
+            link.style.animation = "";
+            } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+            });
+        }
+  </script>
 </body>
 </html>
