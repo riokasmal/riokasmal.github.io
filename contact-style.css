@@ -124,8 +124,8 @@
       padding: 20px;
       background-color: #222;
       border-radius: 10px;
-      /* box-shadow: 0 5px 8px rgba(227, 213, 19, 0.2); */
-      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(227, 213, 19, 0.2);
+      margin-bottom: 10px;
     }
     
     .info {
@@ -245,11 +245,12 @@
     }
 
     /* Footer Styles */
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
-}
+    footer {
+      background-color: #222;
+      font-size: 12px;
+      color: #e3d513;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+    }
