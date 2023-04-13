@@ -129,7 +129,7 @@ body {
   height: 350px;
   border-radius: 50%;
   margin-right: 50px;
-  box-shadow: 0 0 15px rgba(227, 213, 19, 0.2);
+  /* box-shadow: 0 0 10px rgba(227, 213, 19, 0.5); */
 }
 
 .intro {
@@ -156,7 +156,7 @@ body {
   color: #fff;
   margin-bottom: 2px;
   background-color: #222;
-  /* box-shadow: 0 0 10px rgba(227, 213, 19, 0.2); */
+  /* box-shadow: 0 0 10px rgba(227, 213, 19, 0.3); */
   width: 530px;
   padding: 10px;
   border-radius: 10px;
