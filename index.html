@@ -1,87 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-  <title>Riokasmal | Home</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-   <nav class="navbar">
-    <div class="logo">
-        <a href="index.html">
-          <img src="img/logo.png" alt="Logo">
-        </a>
-      </div>        
-    <ul class="nav-links">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="blog.html">BLOG</a></li>
-      <li><a href="portofolio.html">PORTOFOLIO</a></li>
-      <li><a href="about.html">ABOUT</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
-    </ul>
-    <div class="burger" onclick="toggleMenu()">
-      <div class="Home"></div>
-      <div class="Blog"></div>
-      <div class="Portofolio"></div>
-      <div class="About"></div>
-      <div class="Contact"></div>
-    </div>
-  </nav>
-  </header>
-  
-
-  <!-- Konten -->
-  <main>
-    <div class="profile">
-      <img src="img/itsme-1.jpeg" alt="Riokasmal Profile">
-      <div class="intro">
-        <h1>
-          <span style="color: #fff; font-weight: 100;">HI, I'M</span>
-          <span style="color: #e3d513; font-weight: bolder;">RIOKASMAL</span>
-        </h1>
-        <!-- <h2>I'm Graphic Design &amp; Web Developer</h2> -->
-        <p>Riokasmal adalah panggilan saya, nama singkat dari Mohammad Rio Rizal Cashmal. Saya berusia 22 tahun dan kuliah di Universitas Pamulang, jurusan Teknik Informatika. Hobi saya mendengarkan musik. <a href="about.html" class="btn">Detail</a></p>
-        <div class="sosmed">              
-            <div class="social-media">
-                <a href="https://www.facebook.com/riokasmal/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com/riokasml" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/riokasml/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/users/.riokasmal#9616" target="_blank"><i class="fab fa-discord"></i></a>
-              </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moh. Rio Rizal Cashmal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="avatar">
+          <img
+            src="asset/logo.png"
+            alt="Avatar rio"
+          />
         </div>
+        <div class="author">
+          <h1>Moh. Rio Rizal Cashmal</h1>
+          <p style="margin-top: 0; margin-bottom: 1">Informatics Engineering</p>
+        </div>
+        <a href="aboutme.html" class="cta">About Me</a>
+      </div>
+      <div class="socmed">
+        <a href="https://instagram.com/riokasml" target="_blank">
+          <img src="asset/Instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://facebook.com/riokasmal" target="_blank">
+          <img src="asset/facebook.png " alt="Facebook" />
+        </a>
+        <a href="https://id.pinterest.com/riokasml/" target="_blank">
+          <img src="asset/pinterest.png" alt="Pinterest" />
+        </a>
+        <a href="https://github.com/riokasmal" target="_blank">
+          <img src="asset/github.png" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/riokasmal/" target="_blank">
+          <img src="asset/linkedin.png" alt="LinkedIn" />
+        </a>        
+        <!-- <a href="https://twitter.com/riokasml" target="_blank">
+          <img src="asset/Twitter.png" alt="Twitter" /> -->
+        </a>
       </div>
     </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2023 Riokasmal.</p>
-    <!-- <p>&copy; 2023 Riokasmal. Created by Riokasmal with the assistance of ChatGPT.</p> -->
-  </footer>
-
-  <!-- javascript -->
-  <script>
-    function toggleMenu() {
-        const navLinks = document.querySelector(".nav-links");
-        const burger = document.querySelector(".burger");
-        const links = document.querySelectorAll(".nav-links li");
-
-        navLinks.classList.toggle("nav-active");
-        burger.classList.toggle("toggle");
-
-        links.forEach((link, index) => {
-            if (link.style.animation) {
-            link.style.animation = "";
-            } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-            }
-            });
-        }
-  </script>
-</body>
+  </body>
 </html>
