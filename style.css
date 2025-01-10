@@ -24,7 +24,7 @@ body {
     padding-top: 45px;
     padding-bottom: 30px;
     border-radius: 50px;
-    width: 350px;
+    width: 330px;
   }
   
   .profile-image {
@@ -96,7 +96,7 @@ body {
       padding-top: 35px;
       padding-bottom: 25px;
       border-radius: 50px;
-      width: 330px;
+      width: 300px;
     }
 
     .social-links a {
@@ -109,6 +109,19 @@ body {
       background: none;
       /* transform: scale(1.5); */
     }
+
+    .profile-image {
+      width: 90px;
+      height: 90px;
+      }
+  
+      .name {
+        font-size: 20px;
+      }
+      
+      .description {
+        font-size: 14px;
+      }
   }
 
   @media (max-width: 480px) {
@@ -122,6 +135,7 @@ body {
 
     .social-links a {
       transition: none;
+
     }
 
     .social-links a:hover {
@@ -129,5 +143,18 @@ body {
       padding: 0px;
       background: none;
       /* transform: scale(1.5); */
+    }
+
+    .profile-image {
+    width: 90px;
+    height: 90px;
+    }
+
+    .name {
+      font-size: 20px;
+    }
+    
+    .description {
+      font-size: 14px;
     }
   }
