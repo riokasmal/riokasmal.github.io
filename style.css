@@ -24,7 +24,7 @@ body {
     padding-top: 45px;
     padding-bottom: 30px;
     border-radius: 50px;
-    width: 330px;
+    width: 300px;
   }
   
   .profile-image {
@@ -96,7 +96,7 @@ body {
       padding-top: 35px;
       padding-bottom: 25px;
       border-radius: 50px;
-      width: 300px;
+      width: 250px;
     }
 
     .social-links a {
@@ -130,7 +130,7 @@ body {
       padding-top: 25px;
       padding-bottom: 30px;
       border-radius: 50px;
-      width: 300px;
+      width: 250px;
     }
 
     .social-links a {
