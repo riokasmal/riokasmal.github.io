@@ -23,45 +23,64 @@
         .dark-mode {
             background: url('asset/bg-desktop.png') no-repeat center center/cover;
         }
+        .highlight {
+            background: rgb(208, 208, 10);
+            padding: 2px 6px;
+        }
     </style>
 </head>
 <body class="light-mode text-black dark:text-white flex justify-center items-center min-h-screen p-4">
     <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-xl bg-white/10 dark:bg-black/10 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex justify-between items-center">
         <nav class="flex gap-6 text-lg font-semibold">
-            <a href="#home" class="hover:text-orange-400 transition">riokasmal</a>
-            <!-- <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a> -->
-            <!-- <a href="#contact" class="hover:text-blue-400 transition">Contact</a> -->
+            <a href="#home" class="hover:text-yellow-600 transition">.rkasml</a>
         </nav>
         <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md">🌓</button>
     </header>
-    
+
+  <div>
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-24">
-        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-4 border-white mx-auto">
+        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto">
         <h2 class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
-        <p class="text-base mt-5 text-justify">Computer hardware and software technician with experience in network installation. Communicative, creative, understand visual image design and video editing, and enthusiastic about exploring technology to add insight.</p>
-        <hr class="my-5 border-gray-800/30 dark:border-white/30">
+        <p class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
+        <p class="text-base mt-2 text-left font-semibold"><span class="highlight">Let's find out the problems out there.</span></p>
+        <hr class="my-6 border-gray-800/30 dark:border-white/30">
         <div class="flex justify-center gap-4 flex-wrap">
             <a href="https://instagram.com/riokasml" target="_blank">
-                <img src="asset/Instagram.png" alt="Instagram" class="w-8 dark:hidden">
+                <img src="asset/Instagram-black.png" alt="Instagram" class="w-8 dark:hidden">
                 <img src="asset/Instagram.png" alt="Instagram" class="w-8 hidden dark:block">
             </a>
             <a href="https://facebook.com/riokasmal" target="_blank">
-                <img src="asset/facebook.png" alt="Facebook" class="w-8 dark:hidden">
+                <img src="asset/facebook-black.png" alt="Facebook" class="w-8 dark:hidden">
                 <img src="asset/facebook.png" alt="Facebook" class="w-8 hidden dark:block">
             </a>
             <a href="https://id.pinterest.com/riokasml/" target="_blank">
-                <img src="asset/pinterest.png" alt="Pinterest" class="w-8 dark:hidden">
+                <img src="asset/pinterest-black.png" alt="Pinterest" class="w-8 dark:hidden">
                 <img src="asset/pinterest.png" alt="Pinterest" class="w-8 hidden dark:block">
             </a>
             <a href="https://github.com/riokasmal" target="_blank">
-                <img src="asset/github.png" alt="GitHub" class="w-8 dark:hidden">
+                <img src="asset/github-black.png" alt="GitHub" class="w-8 dark:hidden">
                 <img src="asset/github.png" alt="GitHub" class="w-8 hidden dark:block">
             </a>
             <a href="https://www.linkedin.com/in/riokasmal/" target="_blank">
-                <img src="asset/linkedin.png" alt="LinkedIn" class="w-8 dark:hidden">
+                <img src="asset/linkedin-black.png" alt="LinkedIn" class="w-8 dark:hidden">
                 <img src="asset/linkedin.png" alt="LinkedIn" class="w-8 hidden dark:block">
             </a>
         </div>
     </div>
+    
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
+        <div class="container bg-white/30 dark:bg-black/30 p-4 rounded-2xl w-full max-w-xl text-center flex items-center justify-left gap-4 mt-4">
+            <img src="https://yt3.googleusercontent.com/_wDaFocsFwa0R0pzQmJ-Y8wWACWzN_z50ylmYM2IrPgL9gOf2002RLUpsY4pI4n0wHVGg6gfmA=s120-c-k-c0x00ffffff-no-rj" alt="Profile" class="w-12 h-12 rounded-full">
+            <div class="text-left">
+                <h3 class="text-xl font-semibold">riokasmal</h3>
+                <a href="https://www.youtube.com/c/RioKasmal?sub_confirmation=1" target="_blank" class="mt-1 inline-block bg-red-600 text-white py-1 px-3 rounded-lg font-sm hover:bg-red-700 transition">Subscribe</a>
+            </div>
+        </div>
+        <div class="relative w-full h-56 md:h-64 mt-4">
+            <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/dzG1vW7CgkQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="italic text-sm text-gray-500 mt-4">Everything here is just for temporary entertainment.</p>
+    </div>
+  </div>
 </body>
 </html>
