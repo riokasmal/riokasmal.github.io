@@ -14,6 +14,7 @@
             document.body.classList.toggle('dark-mode');
         }
     </script>
+    <script src="script.js" defer></script>
     <title>Moh. Rio Rizal Cashmal</title>
     <link rel="icon" type="image/png" href="asset/favicon.png">
     <style>
@@ -40,15 +41,19 @@
         <nav class="flex gap-6 text-lg font-semibold">
             <a href="#home" class="hover:text-yellow-600">.rkasml</a>
         </nav>
-        <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md">🌓</button>
+        <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md transition-all duration-300 hover:scale-110 active:scale-90">🌓</button>
+        <label class="inline-flex items-center inline-block w-14 h-8">
+            <input type="checkbox" id="langToggle" onchange="toggleLanguage()" class="sr-only peer">
+            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-yellow-400 dark:peer-checked:bg-yellow-400"></div>
+        </label>
     </header>
 
   <div class="mt-32">
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center">
         <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md">
-        <h2 class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
-        <p class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
-        <p class="text-base mt-2 text-left font-semibold"><span class="highlight">Let's find out the problem and have fun!</span></p>
+        <h2 id="profileName" class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
+        <p id="profileJob" class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
+        <p id="profileTagline" class="text-base mt-2 text-left font-semibold"><span class="highlight">Let's find out the problem and have fun!</span></p>
         <!-- <hr class="my-6 border-gray-800/30 dark:border-white/30"> -->
     </div>
     
@@ -64,45 +69,45 @@
         <div class="relative w-full h-56 md:h-64 mt-4">
             <iframe class="w-full h-full rounded-xl shadow-md" src="https://www.youtube.com/embed/dzG1vW7CgkQ" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p class="italic text-sm  mt-4">Everything here is just for temporary entertainment.</p>
+        <p id="profileNote" class="italic text-sm  mt-4">Everything here is just for temporary entertainment.</p>
     </div>
 
 
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
-        <h2 class="text-2xl font-bold">Experience</h2>
+        <h2 id="profileExperience" class="text-2xl font-bold">Experience</h2>
         <div>
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+            <p id="experienceDesc1" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
         <div>
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+            <p id="experienceDesc2" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
         <div>
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+            <p id="experienceDesc3" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
         <div>
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+            <p id="experienceDesc4" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
     </div>
 
 
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
-        <h2 class="text-2xl mt-5">𝑱𝒖𝒔𝒕 𝒄𝒐𝒏𝒕𝒂𝒄𝒕,</h2>
-        <h2 class="text-2xl mb-5">𝒾𝓉'𝓈 𝒻𝓇𝑒𝑒!</h2>
+        <h2 id="contactTittle" class="text-2xl mt-5">𝑱𝒖𝒔𝒕 𝒄𝒐𝒏𝒕𝒂𝒄𝒕,</h2>
+        <h2 id="contactTittle1" class="text-2xl mb-5">𝒾𝓉'𝓈 𝒻𝓇𝑒𝑒!</h2>
         <a class="flex justify-center" href="mailto:riokasmal@gmail.com" target="_blank">
             <img src="asset/emaila-black.png" alt="Instagram" class="w-20 dark:hidden">
             <img src="asset/emaila.png" alt="Instagram" class="w-20 hidden dark:block">
