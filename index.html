@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class'
-        }
-        function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
-            document.body.classList.toggle('light-mode');
-            document.body.classList.toggle('dark-mode');
-        }
     </script>
     <script src="script.js" defer></script>
     <title>Moh. Rio Rizal Cashmal</title>
@@ -39,18 +31,28 @@
 <body class="light-mode text-black dark:text-white flex flex-col justify-center items-center min-h-screen p-4 transition-all duration-1000">
     <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-xl bg-white/10 dark:bg-black/10 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex justify-between items-center z-50">
         <nav class="flex gap-6 text-lg font-semibold">
-            <a href="#home" class="hover:text-yellow-600">.rkasml</a>
+            <a href="#home" class="hover:text-yellow-500 hover:scale-125 duration-500">.rkasml</a>
         </nav>
-        <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-800 rounded-full shadow-md transition-all duration-300 hover:scale-110 active:scale-90">🌓</button>
-        <label class="inline-flex items-center inline-block w-14 h-8">
-            <input type="checkbox" id="langToggle" onchange="toggleLanguage()" class="sr-only peer">
-            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-yellow-400 dark:peer-checked:bg-yellow-400"></div>
-        </label>
+
+        <div class="flex items-center gap-1">
+            <label class="inline-flex items-center inline-block w-14 h-8">
+                <input type="checkbox" id="langToggle" onchange="toggleDarkMode()" class="sr-only peer">
+                <div class="hover:scale-125 duration-500 relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-yellow-500 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-yellow-400 after:border-yellow-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-600 dark:peer-checked:bg-gray-600"></div>
+            </label>
+            <div class="relative">
+                <select id="langDropdown" onchange="toggleLanguage()" class="hover:scale-125 duration-500 bg-gray-200 dark:bg-gray-600 text-black dark:text-white px-2 rounded-full cursor-pointer appearance-none pr-8">
+                    <option value="en" selected>En</option>
+                    <option value="id">Id</option>
+                </select>
+                <span class="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">▾</span>
+            </div>
+        </div>
+        
     </header>
 
   <div class="mt-32">
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center">
-        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md">
+        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 hover:scale-125 duration-500">
         <h2 id="profileName" class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
         <p id="profileJob" class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
         <p id="profileTagline" class="text-base mt-2 text-left font-semibold"><span class="highlight">Let's find out the problem and have fun!</span></p>
@@ -75,28 +77,28 @@
 
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
         <h2 id="profileExperience" class="text-2xl font-bold">Experience</h2>
-        <div>
+        <div class="hover:scale-110 duration-500 px-4">
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
             <p id="experienceDesc1" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
-        <div>
+        <div class="hover:scale-110 duration-500 px-4">
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
             <p id="experienceDesc2" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
-        <div>
+        <div class="hover:scale-110 duration-500 px-4">
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
             <p id="experienceDesc3" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
-        <div>
+        <div class="hover:scale-110 duration-500 px-4">
             <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
             <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
             <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
@@ -109,30 +111,30 @@
         <h2 id="contactTittle" class="text-2xl mt-5">𝑱𝒖𝒔𝒕 𝒄𝒐𝒏𝒕𝒂𝒄𝒕,</h2>
         <h2 id="contactTittle1" class="text-2xl mb-5">𝒾𝓉'𝓈 𝒻𝓇𝑒𝑒!</h2>
         <a class="flex justify-center" href="mailto:riokasmal@gmail.com" target="_blank">
-            <img src="asset/emaila-black.png" alt="Instagram" class="w-20 dark:hidden">
-            <img src="asset/emaila.png" alt="Instagram" class="w-20 hidden dark:block">
+            <img src="asset/emaila-black.png" alt="Gmail" class="w-20 dark:hidden hover:scale-125 duration-300">
+            <img src="asset/emaila.png" alt="Gmail" class="w-20 hidden dark:block hover:scale-125 duration-300">
         </a>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
         <div class="flex justify-center gap-4 flex-wrap">
             <a href="https://instagram.com/riokasml" target="_blank">
-                <img src="asset/Instagram-black.png" alt="Instagram" class="w-8 dark:hidden">
-                <img src="asset/Instagram.png" alt="Instagram" class="w-8 hidden dark:block">
+                <img src="asset/Instagram-black.png" alt="Instagram" class="w-8 dark:hidden hover:scale-125 duration-300">
+                <img src="asset/Instagram.png" alt="Instagram" class="w-8 hidden dark:block hover:scale-125 duration-300"">
             </a>
             <a href="https://facebook.com/riokasmal" target="_blank">
-                <img src="asset/facebook-black.png" alt="Facebook" class="w-8 dark:hidden">
-                <img src="asset/facebook.png" alt="Facebook" class="w-8 hidden dark:block">
+                <img src="asset/facebook-black.png" alt="Facebook" class="w-8 dark:hidden hover:scale-125 duration-300"">
+                <img src="asset/facebook.png" alt="Facebook" class="w-8 hidden dark:block hover:scale-125 duration-300"">
             </a>
             <a href="https://id.pinterest.com/riokasml/" target="_blank">
-                <img src="asset/pinterest-black.png" alt="Pinterest" class="w-8 dark:hidden">
-                <img src="asset/pinterest.png" alt="Pinterest" class="w-8 hidden dark:block">
+                <img src="asset/pinterest-black.png" alt="Pinterest" class="w-8 dark:hidden hover:scale-125 duration-300"">
+                <img src="asset/pinterest.png" alt="Pinterest" class="w-8 hidden dark:block hover:scale-125 duration-300"">
             </a>
             <a href="https://github.com/riokasmal" target="_blank">
-                <img src="asset/github-black.png" alt="GitHub" class="w-8 dark:hidden">
-                <img src="asset/github.png" alt="GitHub" class="w-8 hidden dark:block">
+                <img src="asset/github-black.png" alt="GitHub" class="w-8 dark:hidden hover:scale-125 duration-300"">
+                <img src="asset/github.png" alt="GitHub" class="w-8 hidden dark:block hover:scale-125 duration-300"">
             </a>
             <a href="https://www.linkedin.com/in/riokasmal/" target="_blank">
-                <img src="asset/linkedin-black.png" alt="LinkedIn" class="w-8 dark:hidden">
-                <img src="asset/linkedin.png" alt="LinkedIn" class="w-8 hidden dark:block">
+                <img src="asset/linkedin-black.png" alt="LinkedIn" class="w-8 dark:hidden hover:scale-125 duration-300"">
+                <img src="asset/linkedin.png" alt="LinkedIn" class="w-8 hidden dark:block hover:scale-125 duration-300"">
             </a>
         </div>
     </div>
