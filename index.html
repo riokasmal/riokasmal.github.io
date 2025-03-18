@@ -14,13 +14,13 @@
             transition: background 1s ease-in-out;
         }
         .light-mode {
-            background: url('asset/bg-light.png') no-repeat center center/cover;
+            background: linear-gradient(to bottom right, #fefce8, #dbeafe);
         }
         .dark-mode {
-            background: url('asset/bg-desktop.png') no-repeat center center/cover;
+            background: linear-gradient(to bottom right, #18181b, #155e75);
         }
         .highlight {
-            background: rgb(208, 208, 10);
+            background: rgb(240, 210, 0);
             padding: 2px 6px;
         }
         .dark .highlight {
@@ -28,19 +28,19 @@
         }
     </style>
 </head>
-<body class="light-mode text-black dark:text-white flex flex-col justify-center items-center min-h-screen p-4 transition-all duration-1000">
+<body class="light-mode text-gray-900 dark:text-white flex flex-col justify-center items-center min-h-screen p-4 transition-all duration-500">
     <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-xl bg-white/10 dark:bg-black/10 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex justify-between items-center z-50">
         <nav class="flex gap-6 text-lg font-semibold">
-            <a href="#home" class="hover:text-yellow-500 hover:scale-125 duration-500">.rkasml</a>
+            <a href="#home" class="hover:text-yellow-400">.rkasml</a>
         </nav>
 
         <div class="flex items-center gap-1">
             <label class="inline-flex items-center inline-block w-14 h-8">
                 <input type="checkbox" id="langToggle" onchange="toggleDarkMode()" class="sr-only peer">
-                <div class="hover:scale-125 duration-500 relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-yellow-500 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-yellow-400 after:border-yellow-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-600 dark:peer-checked:bg-gray-600"></div>
+                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-yellow-500 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-yellow-400 after:border-yellow-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-700 dark:peer-checked:bg-gray-700"></div>
             </label>
             <div class="relative">
-                <select id="langDropdown" onchange="toggleLanguage()" class="hover:scale-125 duration-500 bg-gray-200 dark:bg-gray-600 text-black dark:text-white px-2 rounded-full cursor-pointer appearance-none pr-8">
+                <select id="langDropdown" onchange="toggleLanguage()" class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-2 rounded-full cursor-pointer appearance-none pr-8">
                     <option value="en" selected>En</option>
                     <option value="id">Id</option>
                 </select>
@@ -52,7 +52,7 @@
 
   <div class="mt-32">
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center">
-        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400 hover:scale-125 duration-500">
+        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md transition-all duration-300 cursor-pointer">
         <h2 id="profileName" class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
         <p id="profileJob" class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
         <p id="profileTagline" class="text-base mt-2 text-left font-semibold"><span class="highlight">Let's find out the problem and have fun!</span></p>
@@ -77,32 +77,32 @@
 
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
         <h2 id="profileExperience" class="text-2xl font-bold">Experience</h2>
-        <div class="hover:scale-110 duration-500 px-4">
-            <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
-            <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
-            <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p id="experienceDesc1" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+        <div class="px-2">
+            <h2 class="text-lg text-left font-semibold mt-5">IT Support Specialist</h2>
+            <h2 class="text-base text-left font-semibold">RicHer & DaiSy Attorney at Law</h2>
+            <p class="italic text-left text-sm font-light">September 2024 - Now</p>
+            <p id="experienceDesc1" class="text-base text-left">-</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
-        <div class="hover:scale-110 duration-500 px-4">
-            <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
-            <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
-            <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p id="experienceDesc2" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+        <div class="px-2">
+            <h2 class="text-lg text-left font-semibold mt-5">Technical Services Specialist</h2>
+            <h2 class="text-base text-left font-semibold">Artech Nusantara</h2>
+            <p class="italic text-left text-sm font-light">July 2018 - September 2024 (6 years, 3 month)</p>
+            <p id="experienceDesc2" class="text-base text-left">Providing call service and installation of CCTV, PABX Panasonic Telephone, and Internet Network.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
-        <div class="hover:scale-110 duration-500 px-4">
-            <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
-            <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
-            <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p id="experienceDesc3" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+        <div class="px-2">
+            <h2 class="text-lg text-left font-semibold mt-5">Computer Technician</h2>
+            <h2 class="text-base text-left font-semibold">Sinar Komputer</h2>
+            <p class="italic text-left text-sm font-light">October 2020 - March 2021 (6 month)</p>
+            <p id="experienceDesc3" class="text-base text-left">Providing customer service regarding computer hardware/software troubleshooting and providing new computer assembly services.</p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
-        <div class="hover:scale-110 duration-500 px-4">
-            <h2 class="text-lg text-left font-semibold mt-5">Lola Lala Lolo</h2>
-            <h2 class="text-base text-left font-semibold">PT. Lala Lolo Saja Dahulu Deh</h2>
-            <p class="italic text-left text-sm">Lala 2018 - Lolo 2024</p>
-            <p id="experienceDesc4" class="text-base text-left">Ya lala lolo lala lolo, lalo lala lolo, lalo lala lolo, ya lalo lala lolo, lalo lala lolo, lalo lala lolo, lalo lala lolo.</p>    
+        <div class="px-2">
+            <h2 class="text-lg text-left font-semibold mt-5">Graphic Designer (Intern)</h2>
+            <h2 class="text-base text-left font-semibold">Dinas Komunikasi dan Informatika Kota Tangerang</h2>
+            <p class="italic text-left text-sm font-light">December 2016 - December 2016 (1 month)</p>
+            <p id="experienceDesc4" class="text-base text-left">Editing photos and sorting documentation photo files for archiving.</p>    
         </div>
     </div>
 
