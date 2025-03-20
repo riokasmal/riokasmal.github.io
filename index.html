@@ -14,7 +14,7 @@
             transition: background 1s ease-in-out;
         }
         .light-mode {
-            background: linear-gradient(to bottom right, #ffedd5, #bfdbfe);
+            background: linear-gradient(to bottom left, #bfdbfe, #ffedd5);
         }
         .dark-mode {
             background: linear-gradient(to bottom right, #18181b, #155e75);
@@ -36,7 +36,7 @@
 <body class="light-mode text-gray-900 dark:text-white flex flex-col justify-center items-center min-h-screen p-4 transition-all duration-500">
     <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-xl bg-white/10 dark:bg-black/10 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex justify-between items-center z-50">
         <nav class="flex gap-6 text-lg font-semibold">
-            <a href="#home" class=" gradient-text">.riokasml</a>
+            <a href="#home" class="gradient-text">.riokasml</a>
         </nav>
 
         <div class="flex items-center gap-1">
@@ -55,8 +55,25 @@
         
     </header>
 
-  <div class="mt-32">
-    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center">
+  <div class="mt-24">
+    
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl flex justify-between items-center">
+        <!-- Waktu & Tanggal (Kiri) -->
+        <div class="text-left">
+            <p id="currentTime" class="text-5xl font-semibold antialiased tracking-widest drop-shadow-lg"></p>
+            <p id="currentDate" class="text-lg font-light mt-2"></p>
+            <p id="weatherDesc" class="text-base font-light"></p>
+        </div>
+    
+        <!-- Cuaca (Kanan) -->
+        <div class="flex justify-between items-center">
+            <img id="weatherIcon" src="" alt="Weather Icon" class="w-2x1 h-auto drop-shadow-lg">
+            <p id="weatherTemp" class="text-lg font-medium drop-shadow-lg"></p>
+        </div>
+    </div>
+    
+
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
         <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md transition-all duration-300 cursor-pointer">
         <h2 id="profileName" class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
         <p id="profileJob" class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
@@ -65,7 +82,7 @@
     </div>
     
 
-    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
         <div class="container bg-white/30 dark:bg-black/30 p-4 rounded-2xl w-full max-w-xl text-center flex items-center justify-left gap-4 shadow-md">
             <img src="https://yt3.googleusercontent.com/_wDaFocsFwa0R0pzQmJ-Y8wWACWzN_z50ylmYM2IrPgL9gOf2002RLUpsY4pI4n0wHVGg6gfmA=s120-c-k-c0x00ffffff-no-rj" alt="Profile" class="w-12 h-12 rounded-full">
             <div class="text-left">
@@ -73,14 +90,14 @@
                 <a href="https://www.youtube.com/c/RioKasmal?sub_confirmation=1" target="_blank" class="mt-1 inline-block bg-red-600 text-white py-1 px-3 rounded-lg font-sm hover:bg-red-700 transition">Subscribe</a>
             </div>
         </div>
-        <div class="relative w-full h-56 md:h-64 mt-4">
+        <div class="relative w-full h-56 md:h-64 mt-6">
             <iframe class="w-full h-full rounded-xl shadow-md" src="https://www.youtube.com/embed/dzG1vW7CgkQ" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p id="profileNote" class="italic text-sm  mt-4">Everything here is just for temporary entertainment.</p>
+        <p id="profileNote" class="italic text-sm  mt-6">Everything here is just for temporary entertainment.</p>
     </div>
 
 
-    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
         <h2 id="profileExperience" class="text-2xl font-bold">Experience</h2>
         <div class="px-2">
             <h2 class="text-lg text-left font-semibold mt-5">IT Support Specialist</h2>
@@ -112,7 +129,7 @@
     </div>
 
 
-    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-8 rounded-2xl w-full max-w-xl text-center mt-8">
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
         <h2 id="contactTittle" class="text-2xl mt-5">𝑱𝒖𝒔𝒕 𝒄𝒐𝒏𝒕𝒂𝒄𝒕,</h2>
         <h2 id="contactTittle1" class="text-2xl mb-5">𝒾𝓉'𝓈 𝒻𝓇𝑒𝑒!</h2>
         <a class="flex justify-center" href="mailto:riokasmal@gmail.com" target="_blank">
@@ -144,7 +161,7 @@
         </div>
     </div>
 
-    <p class="italic text-sm mt-8 text-center">© 2025 .rkasml, All Rights Reserved</p>
+    <p class="italic text-sm mt-10 text-center">© 2025 .rkasml, All Rights Reserved</p>
   </div>
 </body>
 </html>

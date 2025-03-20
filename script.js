@@ -34,3 +34,61 @@ function toggleLanguage() {
         document.getElementById("experienceDesc4").innerHTML = "Editing photos and sorting documentation photo files for archiving.";
     }
 }
+
+function updateDateTime() {
+    const now = new Date();
+    const lang = document.getElementById('langDropdown').value;
+    const optionsDate = {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+    };
+    
+    let locale = 'en-US';
+    if (lang === 'id') {
+        locale = 'id-ID';
+    }
+    
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+    document.getElementById('currentDate').textContent = now.toLocaleDateString(locale, optionsDate);
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+async function updateWeather() {
+    function fetchWeather(lang = "id") {
+        const apiKey = "c5d689ace40474ec41523c8109b64590"; 
+        const lat = "-6.234864"; 
+        const lon = "106.728272";
+        
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=${lang}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("weatherDesc").textContent = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1); // Deskripsi cuaca
+            document.getElementById("weatherTemp").textContent = `${Math.round(data.main.temp)}°C`; // Suhu
+    
+            let iconCode = data.weather[0].icon;
+            let weatherIcon = document.getElementById("weatherIcon");
+    
+            // Set icon
+            weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    
+            // Dynamic shadow based on weather condition
+            // let shadowColor = iconCode.includes("d") ? "rgba(255, 215, 0, 0.7)" : "rgba(173, 216, 230, 0.7)";
+            weatherIcon.style.filter = `drop-shadow(0px 4px 6px ${shadowColor})`;
+        })
+        .catch(error => console.error("Error fetching weather data:", error));
+    }
+    
+    fetchWeather("en");
+    
+
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+updateWeather();
