@@ -42,10 +42,10 @@
         <div class="flex items-center gap-1">
             <label class="inline-flex items-center inline-block w-14 h-8">
                 <input type="checkbox" id="langToggle" onchange="toggleDarkMode()" class="sr-only peer">
-                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-yellow-500 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-yellow-400 after:border-yellow-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-700 dark:peer-checked:bg-gray-700"></div>
+                <div class="relative w-11 h-6 bg-gray-100 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-yellow-500 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-yellow-400 after:border-yellow-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-700 dark:peer-checked:bg-gray-700"></div>
             </label>
             <div class="relative">
-                <select id="langDropdown" onchange="toggleLanguage()" class="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-2 rounded-full cursor-pointer appearance-none pr-8">
+                <select id="langDropdown" onchange="toggleLanguage()" class="bg-gray-100 dark:bg-gray-700 text-black dark:text-white px-2 rounded-full cursor-pointer appearance-none pr-8">
                     <option value="en" selected>En</option>
                     <option value="id">Id</option>
                 </select>
@@ -60,7 +60,7 @@
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl flex justify-between items-center">
         <!-- Waktu & Tanggal (Kiri) -->
         <div class="text-left">
-            <p id="currentTime" class="text-5xl font-semibold antialiased tracking-widest drop-shadow-lg"></p>
+            <p id="currentTime" class="text-5xl font-normal antialiased tracking-widest drop-shadow-lg"></p>
             <p id="currentDate" class="text-lg font-light mt-2"></p>
             <p id="weatherDesc" class="text-base font-light"></p>
         </div>
@@ -72,15 +72,22 @@
         </div>
     </div>
     
-
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
-        <img src="logo.png" alt="logo" class="w-28 h-28 rounded-full border-0 border-white mx-auto shadow-md transition-all duration-300 cursor-pointer">
+        <img src="logo.png" alt="logo" class="w-24 h-24 rounded-full border-0 border-white mx-auto shadow-md">
         <h2 id="profileName" class="text-2xl font-bold mt-5">Moh. Rio Rizal Cashmal</h2>
         <p id="profileJob" class="text-base mt-5 text-left">IT Support 25 years old 🖥️ based in Tangerang 🇮🇩 with freelance experience, Love to be creative in <i>Graphic Design</i> and <i>Video Editing</i>.</p>
         <p id="profileTagline" class="text-base mt-2 text-left font-semibold"><span class="highlight">Let's find out the problem and have fun!</span></p>
         <!-- <hr class="my-6 border-gray-800/30 dark:border-white/30"> -->
     </div>
-    
+
+    <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
+        <h2 id="quickNotes" class="text-2xl font-bold">Notes</h2>
+        <div class="flex items-center gap-2 mt-4">
+            <input id="todoInput" type="text" placeholder="Add a new note" class="shadow-md flex-1 p-2 rounded-lg border border-gray-300 dark:bg-black/50 dark:border-gray-700">
+            <button onclick="addTodo()" class="shadow-md p-2 bg-yellow-400 text-base font-semibold rounded-lg hover:bg-yellow-500 dark:text-black">Add</button>
+        </div>
+        <ul id="todoList" class="mt-4 space-y-2"></ul>
+    </div>
 
     <div class="container bg-white/20 dark:bg-black/20 backdrop-blur-lg shadow-lg p-6 rounded-2xl w-full max-w-xl text-center mt-6">
         <div class="container bg-white/30 dark:bg-black/30 p-4 rounded-2xl w-full max-w-xl text-center flex items-center justify-left gap-4 shadow-md">
@@ -103,7 +110,7 @@
             <h2 class="text-lg text-left font-semibold mt-5">IT Support Specialist</h2>
             <h2 class="text-base text-left font-semibold">RicHer & DaiSy Attorney at Law</h2>
             <p class="italic text-left text-sm font-light">September 2024 - Now</p>
-            <p id="experienceDesc1" class="text-base text-left">-</p>    
+            <p id="experienceDesc1" class="text-base text-left"></p>    
         </div>
         <hr class="my-6 border-gray-800/30 dark:border-white/30">
         <div class="px-2">
