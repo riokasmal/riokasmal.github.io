@@ -81,7 +81,7 @@ async function updateWeather() {
     
             // Dynamic shadow based on weather condition
             // let shadowColor = iconCode.includes("d") ? "rgba(255, 215, 0, 0.7)" : "rgba(173, 216, 230, 0.7)";
-            weatherIcon.style.filter = `drop-shadow(0px 4px 6px ${shadowColor})`;
+            // weatherIcon.style.filter = `drop-shadow(0px 4px 6px ${shadowColor})`;
         })
         .catch(error => console.error("Error fetching weather data:", error));
     }
@@ -100,17 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const todoList = document.getElementById("todoList");
     if (todoList) {
         loadTodos();
-        new Sortable(todoList, {
-            animation: 150,
-            onEnd: saveTodos
-        });
+        // new Sortable(todoList, {
+        //     animation: 150,
+        //     onEnd: saveTodos
+        // });
     }
 
-    document.getElementById("todoInput").addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            addTodo();
-        }
-    });
+    // document.getElementById("todoInput").addEventListener("keypress", function(event) {
+    //     if (event.key === "Enter") {
+    //         addTodo();
+    //     }
+    // });
 });
 
 function addTodo() {
@@ -124,7 +124,7 @@ function addTodo() {
 
 function createTodoElement(text) {
     const li = document.createElement("li");
-    li.className = "todo-item flex items-center justify-between bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md";
+    li.className = "todo-item flex items-center justify-between bg-white dark:bg-black/50 p-2 rounded-lg shadow-md";
     li.innerHTML = `
         <div class="flex items-center gap-2">
             <input type="checkbox" class="rounded-md" onchange="toggleDone(this)">
