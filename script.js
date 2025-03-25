@@ -95,73 +95,87 @@ setInterval(updateDateTime, 1000);
 updateDateTime();
 updateWeather();
 
-document.addEventListener("DOMContentLoaded", loadTodos);
-        
-        function addTodo() {
-            const input = document.getElementById("todoInput");
-            const text = input.value.trim();
-            if (text === "") return;
-            
-            const todoItem = { text, completed: false };
-            let todos = JSON.parse(localStorage.getItem("todos")) || [];
-            todos.push(todoItem);
-            localStorage.setItem("todos", JSON.stringify(todos));
-            input.value = "";
-            renderTodos();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const todoList = document.getElementById("todoList");
+    if (todoList) {
+        loadTodos();
+        new Sortable(todoList, {
+            animation: 150,
+            onEnd: saveTodos
+        });
+    }
+
+    document.getElementById("todoInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            addTodo();
         }
-        
-        function toggleTodo(index) {
-            let todos = JSON.parse(localStorage.getItem("todos"));
-            todos[index].completed = !todos[index].completed;
-            localStorage.setItem("todos", JSON.stringify(todos));
-            renderTodos();
-        }
-        
-        function deleteTodo(index) {
-            let todos = JSON.parse(localStorage.getItem("todos"));
-            todos.splice(index, 1);
-            localStorage.setItem("todos", JSON.stringify(todos));
-            renderTodos();
-        }
-        
-        function renderTodos() {
-            const todoList = document.getElementById("todoList");
-            todoList.innerHTML = "";
-            let todos = JSON.parse(localStorage.getItem("todos")) || [];
-            
-            todos.forEach((todo, index) => {
-                const li = document.createElement("li");
-                li.className = "flex items-center justify-between bg-white/40 dark:bg-black/30 p-2 rounded-lg";
-                
-                const label = document.createElement("label");
-                label.className = "flex items-center gap-2 cursor-pointer";
-                
-                const checkbox = document.createElement("input");
-                checkbox.type = "checkbox";
-                checkbox.checked = todo.completed;
-                checkbox.className = "w-5 h-5 rounded-md";
-                checkbox.onclick = () => toggleTodo(index);
-                
-                const span = document.createElement("span");
-                span.textContent = todo.text;
-                if (todo.completed) {
-                    span.classList.add("line-through", "text-gray-500");
-                }
-                
-                label.appendChild(checkbox);
-                label.appendChild(span);
-                
-                const deleteBtn = document.createElement("button");
-                deleteBtn.textContent = "❌";
-                deleteBtn.className = "text-red-500 hover:text-red-700";
-                deleteBtn.onclick = () => deleteTodo(index);
-                
-                li.appendChild(label);
-                li.appendChild(deleteBtn);
-                todoList.appendChild(li);
-            });
-        }
-        
-        function loadTodos() {
-            renderTodos();
-        }
+    });
+});
+
+function addTodo() {
+    const input = document.getElementById("todoInput");
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = "";
+    createTodoElement(text);
+    saveTodos();
+}
+
+function createTodoElement(text) {
+    const li = document.createElement("li");
+    li.className = "todo-item flex items-center justify-between bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md";
+    li.innerHTML = `
+        <div class="flex items-center gap-2">
+            <input type="checkbox" class="rounded-md" onchange="toggleDone(this)">
+            <span class="flex-1 cursor-pointer" onclick="editTodo(this)">${text}</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="editTodo(this.closest('li').querySelector('span'))" class="text-yellow-500">✏️</button>
+            <button onclick="deleteTodo(this)" class="text-red-500">✖</button>
+        </div>
+    `;
+    document.getElementById("todoList").appendChild(li);
+}
+
+function editTodo(span) {
+    const newText = prompt("Edit your task:", span.textContent);
+    if (newText !== null) {
+        span.textContent = newText.trim();
+        saveTodos();
+    }
+}
+
+function toggleDone(checkbox) {
+    checkbox.nextElementSibling.classList.toggle("line-through", checkbox.checked);
+    saveTodos();
+}
+
+function deleteTodo(button) {
+    button.parentElement.parentElement.classList.add("opacity-0", "-translate-x-10");
+    setTimeout(() => {
+        button.parentElement.parentElement.remove();
+        saveTodos();
+    }, 300);
+}
+
+function saveTodos() {
+    const todos = [];
+    document.querySelectorAll("#todoList li").forEach(li => {
+        todos.push({
+            text: li.querySelector("span").textContent,
+            done: li.querySelector("input").checked
+        });
+    });
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadTodos() {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    todos.forEach(todo => {
+        createTodoElement(todo.text);
+        const lastTodo = document.querySelector("#todoList li:last-child");
+        lastTodo.querySelector("input").checked = todo.done;
+        if (todo.done) lastTodo.querySelector("span").classList.add("line-through");
+    });
+}
