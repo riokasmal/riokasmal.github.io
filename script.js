@@ -3,10 +3,31 @@ tailwind.config = {
 }
 
 function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark');
-    document.body.classList.toggle('light-mode');
-    document.body.classList.toggle('dark-mode');
+    document.documentElement.classList.toggle("dark");
+    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
+
+    // Simpan mode ke localStorage
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+
+    // Update toggle switch sesuai mode
+    document.getElementById("darkModeToggle").checked = isDarkMode;
 }
+
+// Load mode dari localStorage saat halaman dibuka
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    const isDarkMode = savedTheme === "dark";
+
+    // Set dark mode sesuai cache
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    document.body.classList.toggle("dark-mode", isDarkMode);
+    document.body.classList.toggle("light-mode", !isDarkMode);
+
+    // Set switch toggle sesuai mode
+    document.getElementById("darkModeToggle").checked = isDarkMode;
+});
 
 function toggleLanguage() {
     const langDropdown = document.getElementById("langDropdown");
