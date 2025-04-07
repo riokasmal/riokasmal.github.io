@@ -143,13 +143,13 @@ function addTodo() {
     saveTodos();
 }
 
-function createTodoElement(text) {
+function createTodoElement(text, done = false) {
     const li = document.createElement("li");
     li.className = "todo-item flex items-center justify-between bg-white dark:bg-black/50 p-2 rounded-lg shadow-md";
     li.innerHTML = `
         <div class="flex items-center gap-2">
-            <input type="checkbox" class="rounded-md" onchange="toggleDone(this)">
-            <span class="flex-1 cursor-pointer" onclick="editTodo(this)">${text}</span>
+            <input type="checkbox" class="rounded-md" onchange="toggleDone(this)" ${done ? 'checked' : ''}>
+            <span class="flex-1 cursor-pointer ${done ? 'line-through' : ''}" onclick="editTodo(this)">${text}</span>
         </div>
         <div class="flex items-center gap-2">
             <button onclick="editTodo(this.closest('li').querySelector('span'))" class="text-yellow-500">✏️</button>
@@ -194,9 +194,6 @@ function saveTodos() {
 function loadTodos() {
     const todos = JSON.parse(localStorage.getItem("todos")) || [];
     todos.forEach(todo => {
-        createTodoElement(todo.text);
-        const lastTodo = document.querySelector("#todoList li:last-child");
-        lastTodo.querySelector("input").checked = todo.done;
-        if (todo.done) lastTodo.querySelector("span").classList.add("line-through");
+        createTodoElement(todo.text, todo.done);
     });
 }
